@@ -46,6 +46,7 @@ public class MainController {
         return "template/footer";
     }
 
+    //로그인
     @PostMapping("/login")
     public String login(HttpServletRequest request, Model model) {
         String id = request.getParameter("name");
@@ -72,5 +73,40 @@ public class MainController {
         model.addAttribute("message", "");
         model.addAttribute("returnUrl", "/");
         return "redirect3";
+    }
+
+    //로그아웃 세션x
+    @GetMapping("/logout")
+    public String logOut(HttpSession session, Model model) {
+        session.invalidate();
+        model.addAttribute("message", "");
+        model.addAttribute("returnUrl", "/");
+        return "redirect3";
+    }
+
+    //회원가입
+    @GetMapping("/register")
+    public String register() {
+        return "register";
+    }
+
+    //회원가입 동작
+    @PostMapping("/register/write")
+    public String registerWrite(Model model, HttpServletRequest request) {
+        String id = request.getParameter("id");
+        String pwd = request.getParameter("pwd");
+        String sex = request.getParameter("sex");
+        Account account = new Account();
+        try {
+            account.setName(id);
+            account.setPassword(pwd);
+            account.setGender(Integer.parseInt(sex));
+            accountService.save(account);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        model.addAttribute("message", "FLONA 회원가입을 축하합니다!");
+        model.addAttribute("returnUrl", "/");
+        return "redirect";
     }
 }

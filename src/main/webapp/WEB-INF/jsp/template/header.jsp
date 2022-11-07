@@ -3,10 +3,9 @@
 <header>
     <div class="header_wrap">
         <div class="logo">
-            <a href="index.html">
-                <img src="/img/logo.png" alt="로고">
+            <a href="/">
+                <img src="/img/로고.png" alt="로고">
             </a>
-
 
         </div>
         <div class="menu_wrap ">

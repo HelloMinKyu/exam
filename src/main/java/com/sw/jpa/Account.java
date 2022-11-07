@@ -16,7 +16,7 @@ public class Account {
     private Integer id; //pk
     private String name; //userID
     private String password; //userPassword
-    private String gender; //sex
+    private Integer gender; //sex
 
     @Builder
     public Account (int id, String name, String password) {

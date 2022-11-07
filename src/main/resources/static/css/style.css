@@ -8,7 +8,7 @@
 @font-face {
   font-family: "Pretendard-Regular";
   src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-    format("woff");
+  format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -119,13 +119,12 @@ header {
 
 /* 로그인 */
 .form_box {
-  width: 75%;
-  padding-left:  100px;
+  width: 100%;
 }
 .input_wrap {
   position: relative;
   height: 30px;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
 .input_icon {
@@ -146,21 +145,50 @@ header {
   padding-right: 10px;
 }
 .login_btn {
-  width: 100%;
-  height: 46px;
+  width: 80px;
+  height: 60px;
   border: none;
-  background: #acb2c0;
-  border-radius: 40px;
+  background: #F3A2CD;
+  border-radius: 14px;
   color: #fff;
   font-size: 18px;
   font-weight: bold;
   line-height: 46px;
-  margin-top: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.login_btn2 {
+  width: 80px;
+  height: 40px;
+  border: none;
+  background: #F3A2CD;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 10px;
 }
 .login.section {
   border: 1px solid #5c5c66;
   border-radius: 20px;
-  padding: 5px;
+  padding: 30px 24px 50px 24px;
+}
+.login_width {
+  width: calc((100% - 100px));
+}
+.login_btn_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
 }
 .login_logo {
   width: 94px;
@@ -170,12 +198,91 @@ header {
 .login .form_box {
   margin-top: 40px;
 }
+.login_last_btn a {
+  font-size: 14px;
+  color: #999;
+  line-height: 1.3;
+  display: block;
+  padding: 0 4px;
+}
+.login_last_btn ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login_last_btn li {
+  width: fit-content;
+  margin-right: 16px;
+  position: relative;
+}
+.login_last_btn li::after {
+  content: "";
+  display: block;
+  background: #999;
+  width: 1px;
+  height: 8px;
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  transform: translateY(-50%);
+}
+.login_last_btn li:last-child::after {
+  display: none;
+}
+.login2_wrap {
+  display: flex;
+  margin-top: 24px;
+  align-items: center;
+  justify-content: center;
+}
+.login2_img {
+  width: 60px;
+  margin-right: 14px;
+}
+.login2_img img {
+  display: block;
+  width: 100%;
+}
+.login2_text p {
+  font-size: 18px;
+  color: #222;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.login2_text p span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+  line-height: 1.3;
+}
+.login2_text span {
+  font-size: 18px;
+  color: #222;
+  line-height: 1.3;
+}
 .sing_page {
   display: block;
   color: #999;
   font-size: 14px;
-  text-align: center;
+  text-align: right;
   padding: 20px 0;
+}
+.logout_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+.logout_btn button {
+  border: none;
+  background: #acb2c0;
+  line-height: 50px;
+  border-radius: 30px;
+  width: 250px;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
 }
 /* 메인 컨텐츠 */
 footer {

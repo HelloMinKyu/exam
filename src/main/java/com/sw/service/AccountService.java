@@ -20,4 +20,9 @@ public class AccountService {
         Account account = accountRepository.findByName(name);
         return account;
     }
+
+    @Transactional
+    public Account save(Account account) {
+        return accountRepository.save(account);
+    }
 }
