@@ -191,10 +191,11 @@ header {
   margin-bottom: 32px;
 }
 .login_logo {
-  width: 94px;
+  width: 173px;
   display: block;
   margin: 0 auto;
 }
+
 .login .form_box {
   margin-top: 40px;
 }
@@ -583,6 +584,26 @@ footer {
   line-height: 1.2;
   margin-top: 6px;
   color: #fa2323;
+}
+
+.sign_up .input_wrap .success {
+  font-size: 14px;
+  line-height: 1.2;
+  margin-top: 6px;
+  color: #F3A2CD;
+}
+.sign_up .input_wrap .failPwd {
+  font-size: 14px;
+  line-height: 1.2;
+  margin-top: 6px;
+  color: #fa2323;
+}
+
+.sign_up .input_wrap .successPwd {
+  font-size: 14px;
+  line-height: 1.2;
+  margin-top: 6px;
+  color: #F3A2CD;
 }
 .check_wrap {
   display: flex;

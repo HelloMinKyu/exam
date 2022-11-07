@@ -11,12 +11,12 @@
                 <div class="swiper-slide">
                     <img src="img/배너.png" alt="슬라이드 이미지">
                 </div>
-                <div class="swiper-slide">
-                    <img src="img/img02.png" alt="슬라이드 이미지">
-                </div>
-                <div class="swiper-slide">
-                    <img src="img/img03.png" alt="배너슬라이드 이미지">
-                </div>
+<%--                <div class="swiper-slide">--%>
+<%--                    <img src="img/img02.png" alt="슬라이드 이미지">--%>
+<%--                </div>--%>
+<%--                <div class="swiper-slide">--%>
+<%--                    <img src="img/img03.png" alt="배너슬라이드 이미지">--%>
+<%--                </div>--%>
 
             </div>
         </div>
@@ -75,9 +75,11 @@
             </div>
         </div>
         <div class="login section">
+
             <div class="login_logo">
-                <img src="img/로고.png" alt="로고">
+                <img src="img/logo.png" alt="로고">
             </div>
+
             <c:if test="${LOGIN_MEMBER eq null}">
             <div class="form_box">
                 <form action="/login" enctype="multipart/form-data" method="post">

@@ -2,12 +2,11 @@ package com.sw.controller;
 
 import com.sw.jpa.Account;
 import com.sw.service.AccountService;
+import org.apache.poi.ss.formula.functions.Count;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -98,6 +97,11 @@ public class MainController {
         String sex = request.getParameter("sex");
         Account account = new Account();
         try {
+            if(accountService.findByUserName(id) != null) {
+                model.addAttribute("message", "누군가가 이 아이디를 사용하고 있어요");
+                model.addAttribute("returnUrl", "/register");
+                return "redirect";
+            }
             account.setName(id);
             account.setPassword(pwd);
             account.setGender(Integer.parseInt(sex));
@@ -108,5 +112,18 @@ public class MainController {
         model.addAttribute("message", "FLONA 회원가입을 축하합니다!");
         model.addAttribute("returnUrl", "/");
         return "redirect";
+    }
+
+    //실시간 중복idCheck
+    @PostMapping("/idCheck")
+    @ResponseBody
+    public int idCheck(@RequestParam("id") String id) {
+        int cnt = 0;
+        if(accountService.findByUserName(id) != null) {
+            cnt = 1;
+        } else {
+            cnt = 0;
+        }
+        return cnt;
     }
 }

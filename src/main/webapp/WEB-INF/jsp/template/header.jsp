@@ -4,7 +4,7 @@
     <div class="header_wrap">
         <div class="logo">
             <a href="/">
-                <img src="/img/로고.png" alt="로고">
+                <img src="/img/logo.png" alt="로고" height="80px">
             </a>
 
         </div>
