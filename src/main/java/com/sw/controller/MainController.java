@@ -17,7 +17,7 @@ import java.security.GeneralSecurityException;
 public class MainController {
     @Autowired
     private AccountService accountService;
-    private static final String LOGIN_MEMBER = "LOGIN_MEMBER";
+    private static final String user = "user";
 
     @RequestMapping(value = {"/",""})
     public String main() {
@@ -65,7 +65,7 @@ public class MainController {
             }
             //로그인 성공시
             HttpSession session = request.getSession();
-            session.setAttribute(LOGIN_MEMBER, findAccount);
+            session.setAttribute(user, findAccount);
         } catch (Exception e) {
             e.printStackTrace();
         }

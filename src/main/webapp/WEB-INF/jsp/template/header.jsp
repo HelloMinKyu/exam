@@ -10,7 +10,7 @@
         </div>
         <div class="menu_wrap ">
             <ul>
-                <li><a href="#">공지사항</a></li>
+                <li><a href="/board/notice/list/0">공지사항</a></li>
                 <li><a href="#">게시판</a></li>
                 <li><a href="#">게시판1</a></li>
                 <li><a href="#">게시판2</a></li>

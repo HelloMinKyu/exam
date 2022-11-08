@@ -20,6 +20,11 @@ public class AccountService {
     }
 
     @Transactional
+    public Account getOne(int id) {
+        return accountRepository.getOne(id);
+    }
+
+    @Transactional
     public Account save(Account account) {
         return accountRepository.save(account);
     }

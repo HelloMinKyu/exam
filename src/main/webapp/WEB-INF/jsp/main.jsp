@@ -80,7 +80,7 @@
                 <img src="img/logo.png" alt="로고">
             </div>
 
-            <c:if test="${LOGIN_MEMBER eq null}">
+            <c:if test="${user eq null}">
             <div class="form_box">
                 <form action="/login" enctype="multipart/form-data" method="post">
                 <div class="login_btn_wrap">
@@ -110,10 +110,10 @@
                 </div>
             </div>
             </c:if>
-            <c:if test="${LOGIN_MEMBER ne null}">
+            <c:if test="${user ne null}">
                 <div class="login2_wrap">
                     <div class="login2_text">
-                        <p><span>${LOGIN_MEMBER.name}</span> 님 어서오세요.</p>
+                        <p><span>${user.name}</span> 님 어서오세요.</p>
                         <span>현재동접 : 1</span>
                     </div>
 

@@ -276,7 +276,7 @@ header {
 }
 .logout_btn button {
   border: none;
-  background: #acb2c0;
+  background: #F3A2CD;
   line-height: 50px;
   border-radius: 30px;
   width: 250px;
@@ -516,7 +516,7 @@ footer {
 .main_btn {
   width: 200px;
   line-height: 50px;
-  background: #acb2c0;
+  background: #F3A2CD;
   color: #fff;
   font-size: 18px;
   font-weight: bold;

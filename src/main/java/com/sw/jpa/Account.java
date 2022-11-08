@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,11 +18,9 @@ public class Account {
     private String name; //userID
     private String password; //userPassword
     private Integer gender; //sex
+    private String gm;
 
-    @Builder
-    public Account (int id, String name, String password) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-    }
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Board> boards;
+
 }
