@@ -31,21 +31,11 @@
             </div>
             <div class="conts_list">
                 <ul>
+                    <c:forEach items="${notice}" var="notice" begin="0" end="4">
                     <li>
-                        <p><span>-</span> 이벤트 기간 안내 </p>
+                        <p><span>-</span> ${notice.title} </p>
                     </li>
-                    <li>
-                        <p><span>-</span> 이벤트 기간 안내 </p>
-                    </li>
-                    <li>
-                        <p><span>-</span> 이벤트 기간 안내 </p>
-                    </li>
-                    <li>
-                        <p><span>-</span> 이벤트 기간 안내 </p>
-                    </li>
-                    <li>
-                        <p><span>-</span> 이벤트 기간 안내 </p>
-                    </li>
+                    </c:forEach>
                 </ul>
             </div>
         </div>
@@ -56,21 +46,11 @@
             </div>
             <div class="conts_list">
                 <ul>
-                    <li>
-                        <p><span>-</span> 이벤트 기간 안내 </p>
-                    </li>
-                    <li>
-                        <p><span>-</span> 이벤트 기간 안내 </p>
-                    </li>
-                    <li>
-                        <p><span>-</span> 이벤트 기간 안내 </p>
-                    </li>
-                    <li>
-                        <p><span>-</span> 이벤트 기간 안내 </p>
-                    </li>
-                    <li>
-                        <p><span>-</span> 이벤트 기간 안내 </p>
-                    </li>
+                    <c:forEach items="${update}" var="update" begin="0" end="4">
+                        <li>
+                            <p><span>-</span> ${update.title} </p>
+                        </li>
+                    </c:forEach>
                 </ul>
             </div>
         </div>

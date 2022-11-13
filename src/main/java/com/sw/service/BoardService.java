@@ -38,7 +38,7 @@ public class BoardService {
     }
 
     public List<Board> getListByType(String type) {
-        return boardRepository.findAllByType(type);
+        return boardRepository.findAllByTypeOrderByIdDesc(type);
     }
 
     @Transactional
