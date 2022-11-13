@@ -6,6 +6,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface BoardRepository extends JpaRepository<Board, Integer> {
     Page<Board> findAllByType(Pageable pageable, String type);
 
@@ -13,4 +15,6 @@ public interface BoardRepository extends JpaRepository<Board, Integer> {
     Page<Board> findAllByTitleLikeAndType(Pageable pageable, String title , String type);
 
     Board findByIdAndType(int id, String type);
+
+    List<Board> findAllByType(String type);
 }

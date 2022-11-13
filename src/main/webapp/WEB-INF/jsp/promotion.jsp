@@ -11,7 +11,7 @@
         <div class="title">
             <p>도네이션</p>
         </div>
-        <form action="/dn/write" method="post" onsubmit="return check()">
+        <form action="/pr/write" method="post" onsubmit="return confirm('정말로 전송하시겠습니까?')">
         <div class="form_box">
             <div class="input_wrap">
                 <label>닉네임</label>
@@ -19,28 +19,11 @@
                 <input type="hidden" value="${user.id}" name="userID">
             </div>
             <div class="input_wrap">
-                <label>종류</label>
-                <select name="type2" required>
-                    <option value="문화상품권" selected>문화상품권</option>
-                    <option value="해피머니">해피머니</option>
-                </select>
-            </div>
-            <div class="input_wrap">
-                <label>핀코드</label>
-                <textarea name="content" placeholder="핀코드를 입력해주세요.
-예) 1111-1111-1111111 = 10,000"></textarea>
+                <label>링크</label>
+                <textarea name="content" placeholder="url과 총 횟수를 꼭 입력해주셔야 합니다.
+예) http:플로나
+총 00회"></textarea>
 
-            </div>
-            <div class="check_wrap">
-                <input type="checkbox" id="check1" name="checkAgree" value="동의">
-                <label for="check1"></label>
-                <label>도네이션 동의</label>
-            </div>
-            <div class="form_check_text">
-                <p>
-                    유저분들의 도네이션은 호스팅비, 유지보수, 개발비에 사용되며
-                    절대로 강제적으로 하는것이 아닌 자발적으로 참여해주시는 것 입니다.
-                </p>
             </div>
         </div>
         <button type="submit" class="login_btn2">전송</button>
@@ -69,20 +52,11 @@
 
     textarea {
         width: 100%;
-        height: 11.25em;
+        height: 41.25em;
         /*border: none;*/
         resize: none;
     }
 </style>
 <script>
-    function check() {
-        var confirmAlert = confirm('정말로 승인하시겠습니까?');
-        if($("input:checkbox[name='checkAgree']").is(":checked") == false) {
-            alert("도네이션 동의를 체크해주세요.");
-            return false;
-        }
-        if(!confirmAlert) {
-            return false;
-        }
-    }
+
 </script>

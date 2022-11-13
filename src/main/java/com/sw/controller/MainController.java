@@ -1,7 +1,9 @@
 package com.sw.controller;
 
 import com.sw.jpa.Account;
+import com.sw.jpa.Board;
 import com.sw.service.AccountService;
+import com.sw.service.BoardService;
 import org.apache.poi.ss.formula.functions.Count;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,15 +14,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
+import java.util.List;
 
 @Controller
 public class MainController {
     @Autowired
     private AccountService accountService;
+
+    @Autowired
+    private BoardService boardService;
     private static final String user = "user";
 
     @RequestMapping(value = {"/",""})
-    public String main() {
+    public String main(Model model) {
+        List<Board> notice = boardService.getListByType("notice");
+        List<Board> update = boardService.getListByType("update");
+        model.addAttribute("notice", notice);
+        model.addAttribute("update" ,update);
         return "main";
     }
 

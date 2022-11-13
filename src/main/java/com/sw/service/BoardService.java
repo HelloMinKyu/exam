@@ -37,6 +37,10 @@ public class BoardService {
         return boardRepository.findAll();
     }
 
+    public List<Board> getListByType(String type) {
+        return boardRepository.findAllByType(type);
+    }
+
     @Transactional
     public Page<Board> getPages(int page, int showNum, SimpleSearchRequest request, String type) { //페이지 처리하면서 List 출력
         if(page < 0 ) {
