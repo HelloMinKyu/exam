@@ -1,6 +1,7 @@
 package com.sw.service;
 
 import com.sw.command.SimpleSearchRequest;
+import com.sw.jpa.Account;
 import com.sw.jpa.Board;
 import com.sw.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,16 @@ public class BoardService {
                 pages = boardRepository.findAllByTitleLikeAndType(pageRequest, "%" + request.getValue() + "%", type);
                 break;
         }
+        return pages;
+    }
+
+    @Transactional
+    public Page<Board> getPagesByAccount(int page, int showNum, SimpleSearchRequest request, String type, Account account) {
+        if(page < 0 ) {
+            page = 0;
+        }
+        PageRequest pageRequest = PageRequest.of(page, showNum, Sort.Direction.DESC, "id");
+        Page<Board> pages = boardRepository.findAllByTypeAndAccount(pageRequest, type, account);
         return pages;
     }
 }

@@ -25,8 +25,9 @@ public class MainController {
     }
 
     @RequestMapping(value = "/header")
-    public String header(Model m, HttpSession session) throws IOException, GeneralSecurityException {
-        //m.addAttribute("user",(SessionUser) session.getAttribute("user"));
+    public String header(Model m, HttpServletRequest request) throws IOException, GeneralSecurityException {
+        HttpSession session = request.getSession();
+        session.getAttribute("user");
         return "template/header";
     }
 
