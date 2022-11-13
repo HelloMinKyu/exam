@@ -41,6 +41,10 @@ public class BoardService {
         return boardRepository.findAllByTypeOrderByIdDesc(type);
     }
 
+    public List<Board> getListByTypeAndStatus(String type, String status) {
+        return boardRepository.findAllByTypeAndStatusOrderByIdDesc(type, status);
+    }
+
     @Transactional
     public Page<Board> getPages(int page, int showNum, SimpleSearchRequest request, String type) { //페이지 처리하면서 List 출력
         if(page < 0 ) {

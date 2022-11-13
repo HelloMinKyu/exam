@@ -3,6 +3,8 @@ package com.sw.repository;
 import com.sw.jpa.DonePromotion;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface DonePromotionRepository extends JpaRepository<DonePromotion, Integer> {
+import java.util.List;
 
+public interface DonePromotionRepository extends JpaRepository<DonePromotion, Integer> {
+    List<DonePromotion> findAllByTypeAndStatus(String type, String status);
 }

@@ -50,6 +50,7 @@ public class DoneController {
             donePromotion.setType("후원");
             donePromotion.setAccount(account);
             donePromotion.setCheckAgree(checkAgree);
+            donePromotion.setStatus("대기중");
             donePromotionService.save(donePromotion);
         } catch (Exception e) {
             e.printStackTrace();

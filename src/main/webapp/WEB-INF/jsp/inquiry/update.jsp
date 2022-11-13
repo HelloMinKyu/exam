@@ -11,6 +11,7 @@
     <div class="sub03_wrap">
       <div class="sub03_title_input">
         <input type="text" name="title" placeholder="제목을 입력하세요" value="${board.title}">
+        <input type="hidden" name="userId" value="${user.id}">
       </div>
       <div class="sub03_conts">
         <textarea id="boardContent" name="content" placeholder="내용을 입력해주세요">${board.content}</textarea>

@@ -17,4 +17,6 @@ public interface BoardRepository extends JpaRepository<Board, Integer> {
     Board findByIdAndType(int id, String type);
 
     List<Board> findAllByTypeOrderByIdDesc(String type);
+
+    List<Board> findAllByTypeAndStatusOrderByIdDesc(String type, String status);
 }

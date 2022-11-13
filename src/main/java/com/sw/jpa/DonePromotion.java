@@ -20,7 +20,7 @@ public class DonePromotion {
     private String checkAgree;
     private String type;
     private String type2;
-
+    private String status;
     @CreationTimestamp
     private LocalDateTime createdAt;
 

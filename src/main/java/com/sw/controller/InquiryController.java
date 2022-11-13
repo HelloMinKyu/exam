@@ -47,6 +47,7 @@ public class InquiryController {
             board.setWriter(account.getName());
             board.setAccount(account);
             board.setType(type);
+            board.setStatus("대기중");
             boardService.save(board);
         } catch (Exception e) {
             e.printStackTrace();
@@ -93,6 +94,8 @@ public class InquiryController {
     public String update(@PathVariable int id, @PathVariable String type, Model model, HttpServletRequest request) {
         Board board = boardService.getOneByIdAndType(id, type);
         model.addAttribute("board", board);
+        HttpSession session = request.getSession();
+        session.getAttribute("user");
         return "inquiry/update";
     }
 
@@ -102,7 +105,14 @@ public class InquiryController {
         Board board = boardService.getOneByIdAndType(id, type);
         String title = request.getParameter("title");
         String content = request.getParameter("content");
+        String userId = request.getParameter("userId");
+        Account account = accountService.getOne(Integer.parseInt(userId));
         try {
+            if(account.getGm().equals("1")) {
+                board.setStatus("답변완료");
+            } else {
+                board.setStatus("대기중");
+            }
             board.setTitle(title);
             board.setContent(content);
             boardService.save(board);

@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class DonePromotionService {
     @Autowired
@@ -24,6 +27,27 @@ public class DonePromotionService {
     @Transactional
     public void deleteById(int id) {
         donePromotionRepository.deleteById(id);
+    }
+
+    @Transactional
+    public List<DonePromotion> getListByTypeAndStatus(String type, String status) {
+        return donePromotionRepository.findAllByTypeAndStatus(type,status);
+    }
+
+
+    @Transactional
+    public void giveDnPr(List<String> IdxArray) {
+        for(int i = 0; i < IdxArray.size(); i++) {
+            String Idx = IdxArray.get(i);
+            Optional<DonePromotion> optional = donePromotionRepository.findById(Integer.parseInt(Idx));
+            if(optional.isPresent()) {
+                DonePromotion donePromotion = optional.get();
+                donePromotion.setStatus("지급완료");
+                donePromotionRepository.save(donePromotion);
+            } else {
+                throw  new NullPointerException();
+            }
+        }
     }
 
 

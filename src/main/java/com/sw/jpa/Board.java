@@ -25,6 +25,7 @@ public class Board {
     private String writer;
     private String type;
     private int view;
+    private String status;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

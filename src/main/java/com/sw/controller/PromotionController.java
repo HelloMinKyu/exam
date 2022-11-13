@@ -46,6 +46,7 @@ public class PromotionController {
             donePromotion.setContent(content);
             donePromotion.setType("홍보");
             donePromotion.setAccount(account);
+            donePromotion.setStatus("대기중");
             donePromotionService.save(donePromotion);
         } catch (Exception e) {
             e.printStackTrace();

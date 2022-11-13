@@ -57,12 +57,12 @@
   function goDelete(id) {
     if(confirm("정말로 삭제하시겠습니까?")) {
       $.ajax({
-        url: '/fBoard/delete',
+        url: '/iBoard/delete',
         type: 'post',
         data: {id: id},
         success: function (data) {
           alert("정상적으로 삭제되었습니다.")
-          location.href='/fBoard/free/list/0'
+          location.href='/iBoard/inquiry/${user.id}/list/0'
         },
         error: function () {
           alert("error");
