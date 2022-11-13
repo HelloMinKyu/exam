@@ -128,12 +128,16 @@
     <div class="main_contents">
         <div class="notice section">
             <div class="conts_list">
+                <a href="/pr/create">
                 <img src="/img/홍보.png" style="width: 447px">
+                </a>
             </div>
         </div>
         <div class="board section">
             <div class="conts_list">
+                <a href="/dn/create">
                 <img src="/img/후원.png" style="width: 447px">
+                </a>
             </div>
         </div>
         <div class="notice section">

@@ -1,30 +1,25 @@
 package com.sw.jpa;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table(name = "board")
+@Table(name = "done_promotion")
 @ToString(exclude={"account"})
-//@Where(clause = "deleted_at is null")
-//@SQLDelete(sql = "UPDATE board SET deleted_at=CURRENT_TIMESTAMP WHERE id=?")
-public class Board {
+public class DonePromotion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String title;
+    private String gainName;
     private String content;
-    private String writer;
+    private String checkAgree;
     private String type;
-    private int view;
+    private String type2;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
