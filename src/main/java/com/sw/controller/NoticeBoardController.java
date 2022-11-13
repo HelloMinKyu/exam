@@ -1,5 +1,6 @@
 package com.sw.controller;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.sw.command.SimpleSearchRequest;
 import com.sw.jpa.Account;
 import com.sw.jpa.Board;
@@ -14,9 +15,10 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.websocket.server.PathParam;
 
 @Controller
-@RequestMapping("/board")
+@RequestMapping("/nBoard")
 public class NoticeBoardController {
     @Autowired
     private BoardService boardService;
@@ -50,7 +52,7 @@ public class NoticeBoardController {
             e.printStackTrace();
         }
         model.addAttribute("message", "성공적으로 작성되었습니다.");
-        model.addAttribute("returnUrl", "/board/notice/list/0");
+        model.addAttribute("returnUrl", "/nBoard/notice/list/0");
         return "redirect";
     }
 
@@ -66,5 +68,48 @@ public class NoticeBoardController {
         model.addAttribute("pagingInfo", pagingInfo);
         model.addAttribute("pathParam", "?" + searchReq.toPathParam());
         return "noticeBoard/list";
+    }
+
+    //게시판 type에 따른 상세보기
+    @GetMapping("/{type}/read/{id}")
+    public String read(@PathVariable int id, @PathVariable String type, Model model, HttpServletRequest request) {
+        Board board = boardService.getOneByIdAndType(id, type);
+        model.addAttribute("board", board);
+        HttpSession session = request.getSession();
+        session.getAttribute("user");
+        return "noticeBoard/read";
+    }
+
+    //게시판 ajax 삭제
+    @ResponseBody
+    @PostMapping("/delete")
+    public void delete(@PathParam("id") int id) {
+        boardService.deleteById(id);
+    }
+
+    //게시판 type에 따른 수정 화면
+    @GetMapping("/{type}/update/{id}")
+    public String update(@PathVariable int id, @PathVariable String type, Model model, HttpServletRequest request) {
+        Board board = boardService.getOneByIdAndType(id, type);
+        model.addAttribute("board", board);
+        return "noticeBoard/update";
+    }
+
+    //게시판 type에 따른 수정 동작
+    @PostMapping("{type}/modify/{id}")
+    public String modify(@PathVariable int id, @PathVariable String type, Model model, HttpServletRequest request) {
+        Board board = boardService.getOneByIdAndType(id, type);
+        String title = request.getParameter("title");
+        String content = request.getParameter("content");
+        try {
+            board.setTitle(title);
+            board.setContent(content);
+            boardService.save(board);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        model.addAttribute("message", "정상적으로 수정되었습니다.");
+        model.addAttribute("returnUrl", "/nBoard/notice/read/" + board.getId());
+        return "redirect";
     }
 }

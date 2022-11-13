@@ -9,11 +9,11 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
+                    <img src="img/리로고.png" alt="슬라이드 이미지">
+                </div>
+                <div class="swiper-slide">
                     <img src="img/배너.png" alt="슬라이드 이미지">
                 </div>
-<%--                <div class="swiper-slide">--%>
-<%--                    <img src="img/img02.png" alt="슬라이드 이미지">--%>
-<%--                </div>--%>
 <%--                <div class="swiper-slide">--%>
 <%--                    <img src="img/img03.png" alt="배너슬라이드 이미지">--%>
 <%--                </div>--%>
@@ -76,9 +76,9 @@
         </div>
         <div class="login section">
 
-            <div class="login_logo">
-                <img src="img/logo.png" alt="로고">
-            </div>
+<%--            <div class="login_logo">--%>
+<%--                <img src="img/logo.png" alt="로고">--%>
+<%--            </div>--%>
 
             <c:if test="${user eq null}">
             <div class="form_box">
@@ -124,8 +124,24 @@
             </c:if>
         </div>
     </div>
-</div>
 
+    <div class="main_contents">
+        <div class="notice section">
+            <div class="conts_list">
+                <img src="/img/홍보.png" style="width: 447px">
+            </div>
+        </div>
+        <div class="board section">
+            <div class="conts_list">
+                <img src="/img/후원.png" style="width: 447px">
+            </div>
+        </div>
+        <div class="notice section">
+<%--            <img src="/img/고객샌터.png">--%>
+<%--            <img src="/img/디코.png">--%>
+        </div>
+    </div>
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>

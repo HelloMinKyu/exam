@@ -18,8 +18,8 @@ public class BoardService {
     private BoardRepository boardRepository;
 
     @Transactional
-    public Board getOne(int id) {
-        return boardRepository.getOne(id);
+    public Board getOneByIdAndType(int id, String type) {
+        return boardRepository.findByIdAndType(id, type);
     }
 
     @Transactional
@@ -45,8 +45,8 @@ public class BoardService {
         String categoryStr = request.getCategory();
         Page<Board> pages = boardRepository.findAllByType(pageRequest, type);
         switch (categoryStr) {
-            case "content":
-                pages = boardRepository.findAllByTitleAndType(pageRequest, "%" + request.getValue() + "%", type);
+            case "title":
+                pages = boardRepository.findAllByTitleLikeAndType(pageRequest, "%" + request.getValue() + "%", type);
                 break;
         }
         return pages;
