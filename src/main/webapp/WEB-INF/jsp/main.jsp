@@ -27,7 +27,7 @@
         <div class="notice section">
             <div class="main_title_wrap">
                 <p>공지사항</p>
-                <div class="more_btn"><a href="#">MORE+</a></div>
+                <div class="more_btn"><a href="/nBoard/notice/list/0">MORE+</a></div>
             </div>
             <div class="conts_list">
                 <ul>
@@ -42,7 +42,7 @@
         <div class="board section">
             <div class="main_title_wrap">
                 <p>게시판</p>
-                <div class="more_btn"><a href="sub01.html">MORE+</a></div>
+                <div class="more_btn"><a href="/uBoard/update/list/0">MORE+</a></div>
             </div>
             <div class="conts_list">
                 <ul>
@@ -101,6 +101,10 @@
                 <div class="logout_btn">
                     <button onclick="location.href='/logout'">로그아웃</button>
                 </div>
+<%--                <div class="logout_btn">--%>
+<%--                    <img src="img/디코.png">--%>
+<%--                    <img src="img/고객샌터.png">--%>
+<%--                </div>--%>
             </c:if>
         </div>
     </div>

@@ -14,8 +14,9 @@
         <form action="/register/write" method="post" onsubmit="return confirm('정말로 가입하시겠습니까?')">
         <div class="form_box">
             <div class="input_wrap">
-                <label>아이디</label>
-                <input type="text" name="id" id="id" placeholder="아이디를 입력해주세요." oninput="checkId()" required>
+                <label>이메일</label>
+                <input type="text" name="id" id="id" placeholder="이메일를 입력해주세요." oninput="checkId()" required>
+<%--                <button type="button" id="checkEmail">전송</button>--%>
                 <span class="success">사용 가능한 아이디입니다.</span>
                 <span class="fail">누군가 이 아이디를 사용하고 있어요.</span>
             </div>
@@ -122,5 +123,21 @@
                 $('#pwd1').val('');
             }
         }
+    })
+
+    // 이메일 인증번호
+    $('.checkEmail').click(function() {
+        $.ajax({
+            type : "POST",
+            url : "/mailConfirm",
+            data : {
+                "email" : $id.val()
+            },
+            success : function(data){
+                alert("해당 이메일로 인증번호 발송이 완료되었습니다. \n 확인부탁드립니다.")
+                console.log("data : "+data);
+                chkEmailConfirm(data, $memailconfirm, $memailconfirmTxt);
+            }
+        })
     })
 </script>
