@@ -31,6 +31,8 @@ public class MainController {
         List<Board> update = boardService.getListByType("update");
         model.addAttribute("notice", notice);
         model.addAttribute("update" ,update);
+        Long cnt = accountService.cntAccount(2);
+        model.addAttribute("cnt", cnt);
         return "main";
     }
 

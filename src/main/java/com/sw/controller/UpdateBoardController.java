@@ -95,7 +95,7 @@ public class UpdateBoardController {
     }
 
     //게시판 type에 따른 수정 동작
-    @PostMapping("{type}/modify/{id}")
+    @PostMapping("/{type}/modify/{id}")
     public String modify(@PathVariable int id, @PathVariable String type, Model model, HttpServletRequest request) {
         Board board = boardService.getOneByIdAndType(id, type);
         String title = request.getParameter("title");

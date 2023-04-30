@@ -19,6 +19,7 @@ public class Account {
     private String password; //userPassword
     private Integer gender; //sex
     private String gm;
+    private Integer loggedin;
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Board> boards;

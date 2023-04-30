@@ -29,4 +29,8 @@ public class AccountService {
         return accountRepository.save(account);
     }
 
+    @Transactional
+    public Long cntAccount(int id) {
+        return accountRepository.countAccountByLoggedin(id);
+    }
 }

@@ -15,8 +15,6 @@ import java.util.UUID;
 @Controller
 @RequestMapping("/file")
 public class Filecontroller {
-
-
     @ResponseBody
     @RequestMapping(value = "/upload.do")
     public void communityImageUpload(HttpServletRequest req, HttpServletResponse resp, MultipartHttpServletRequest multiFile) throws Exception{

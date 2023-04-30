@@ -33,7 +33,7 @@
                 <ul>
                     <c:forEach items="${notice}" var="notice" begin="0" end="4">
                     <li>
-                        <p><span>-</span> ${notice.title} </p>
+                        <p><span>-</span> <a href="/nBoard/notice/read/${notice.id}">${notice.title}<a/> </p>
                     </li>
                     </c:forEach>
                 </ul>
@@ -48,7 +48,7 @@
                 <ul>
                     <c:forEach items="${update}" var="update" begin="0" end="4">
                         <li>
-                            <p><span>-</span> ${update.title} </p>
+                            <p><span>-</span> <a href="/uBoard/update/read/${update.id}">${update.title}</a> </p>
                         </li>
                     </c:forEach>
                 </ul>
@@ -94,7 +94,13 @@
                 <div class="login2_wrap">
                     <div class="login2_text">
                         <p><span>${user.name}</span> 님 어서오세요.</p>
-                        <span>현재동접 : 1</span>
+                        <span>현재동접 : <c:if test="${cnt >= 20}">
+                            ${cnt + 20}
+                        </c:if>
+                        <c:if test="${cnt <= 20}">
+                            ${cnt}
+                        </c:if>
+                        </span>
                     </div>
 
                 </div>

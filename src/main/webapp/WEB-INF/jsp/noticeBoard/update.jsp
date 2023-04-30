@@ -7,7 +7,7 @@
 <div class="wrap02">
   <div class="sub03">
     <p class="sub02_title">글수정</p>
-    <form action="/nBoard/notice/modify/${board.id}" method="post" onsubmit="return confirm('정말로 수정하시겠습니까?')">
+    <form action="/uBoard/update/modify/${board.id}" method="post" onsubmit="return confirm('정말로 수정하시겠습니까?')">
     <div class="sub03_wrap">
       <div class="sub03_title_input">
         <input type="text" name="title" placeholder="제목을 입력하세요" value="${board.title}">

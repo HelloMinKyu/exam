@@ -12,4 +12,6 @@ public interface AccountRepository extends JpaRepository<Account, Integer> {
     Account findByName(String name);
 
     Count findAllByName(String name);
+
+    Long countAccountByLoggedin(int id);
 }
