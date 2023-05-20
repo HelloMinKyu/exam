@@ -33,6 +33,9 @@ a:visited {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
+  display:flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
 }
 /* 0 */
 header {
@@ -77,12 +80,34 @@ header {
 /*  메인배너*/
 /* 메인 컨텐츠 */
 .section {
-  width: calc((100% - 60px) / 3);
+  /*   float: left; */
 }
 .main_contents {
-  display: flex;
+  display:block;
+  /*   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-between; */
+  max-width: 881px;
+}
+.noticeWrap{
+  display:flex;
+  justify-content:space-between;
+  min-height: 230px;
+  gap: 20px;
+}
+.eventBanner{
+  display:flex;
+  justify-content:space-between;
+  min-height: 230px;
+  gap: 20px;
+}
+.login_wrap{
+  clear:both;
+  margin-bottom: 30px;
+}
+.notice, .board{
+  float:left;
+  width: 420px;
 }
 .main_title_wrap {
   display: flex;
@@ -180,6 +205,8 @@ header {
   border: 1px solid #5c5c66;
   border-radius: 10px;
   padding: 40px 24px 19px 24px;
+  width: 445px;
+  float: right;
 }
 
 .radius_img_2 {
@@ -288,8 +315,7 @@ header {
 
 .logout_btn2 {
   display: flex;
-  justify-content: right;
-  margin-top: -223px;
+  justify-content: center;
 }
 
 .logout_btn3 {
@@ -660,6 +686,34 @@ input[id="check1"]:checked + label::after {
   color: #222;
 }
 @media screen and (max-width: 900px) {
+  /* 새로 제작된 css 서식*/
+  .wrap{
+    width:100%;
+    display: block;
+  }
+  .login.section{
+    width: 100% !important;
+  }
+  .noticeWrap{
+    display:block;
+  }
+  .eventBanner{
+    display:block;
+  }
+  .eventBanner .conts_list a{
+    display:block;
+  }
+  .eventBanner .conts_list a img{
+    width: 100% !important;
+  }
+  .logout_btn2 img{
+    width: 50% !important;
+  }
+  .logout_btn3 img{
+    width: 100% !important;
+  }
+
+  /* 끝 */
   .toggle_menu {
     display: block;
     cursor: pointer;

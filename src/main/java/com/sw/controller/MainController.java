@@ -119,6 +119,7 @@ public class MainController {
             account.setPassword(pwd);
             account.setGender(Integer.parseInt(sex));
             account.setGm("0");
+            account.setLoggedin(0);
             accountService.save(account);
         } catch (Exception e) {
             e.printStackTrace();
