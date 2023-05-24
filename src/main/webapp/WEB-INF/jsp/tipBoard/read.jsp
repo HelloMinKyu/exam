@@ -29,7 +29,7 @@
           </li>
           <li>
             <div>
-              <p>플로나</p>
+              <p>${board.writer}</p>
             </div>
           </li>
         </ul>
@@ -40,7 +40,7 @@
 
       <div class="sub02_conts_btnwrap">
         <ul>
-          <c:if test="${user.gm eq 1}">
+          <c:if test="${user.id eq board.account.id}">
           <li><button class="edit_btn" onclick="location.href='/tBoard/tip/update/${board.id}'">수정</button></li>
           <li><button class="delete_btn" onclick="goDelete(${board.id})">삭제</button></li>
           </c:if>
