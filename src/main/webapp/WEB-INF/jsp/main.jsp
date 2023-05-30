@@ -82,7 +82,7 @@
         <div class="login_wrap">
             <div class="logout_btn2">
                 <a href="https://t.me/+mHnL11ekruozNzk1" target="_blank"><img src="img/디코.png" style="width: 222px" height="110" class="radius_img_2"></a>
-                <a href="https://t.me/+mHnL11ekruozNzk1" target="_blank"><img src="img/고객샌터.png" style="width: 222px" height="110" class="radius_img_2"></a>
+                <a href="https://t.me/GMFlona" target="_blank"><img src="img/고객샌터.png" style="width: 222px" height="110" class="radius_img_2"></a>
             </div>
             <div class="logout_btn3">
                 <a href="http://flona.site/nBoard/notice/read/3"><img src="img/규정.png" style="width: 444px" height="110" class="radius_img_2"></a>

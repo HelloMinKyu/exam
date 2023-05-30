@@ -21,8 +21,30 @@
             <div class="input_wrap">
                 <label>링크</label>
                 <textarea name="content" placeholder="url과 총 횟수를 꼭 입력해주셔야 합니다.
-예) http:플로나
-총 00회"></textarea>
+ 예) http:플로나1
+    http:플로나2
+    http:플로나3
+    http:플로나4
+ 최종 04회
+
+--홍보가능 주소 --
+투데이프리 - https://oraksil.cc/ - 1일 3회
+우아미넷 - https://uami1.net/ - 1일 3회
+프리넥스 - https://freenex.net/ - 1일 3회
+프리블루 - https://freeblue02.xyz/ - 1일 3회
+랭크프리 - https://rankfree01.xyz/ - 1일 3회
+투데이시즌2 - https://todaync.com/ - 1일 3회
+게임존 - http://gamezone.live/ - 1일 3회
+빅데이터 - https://bigdt114.com/ - 1일 3회
+리니지갤러리 - https://lingal.net/ - 1일 3회
+홍보킹 - https://hb-king.xyz/ - 1일 3회
+팝린 - https://poplin1.xyz/ - 1일 3회
+린투데이 - https://android-dev.org/public/ - 1일 3회
+
+ !! 어느 사이트를 홍보하시던 토탈 하루 10회만 가능합니다.
+ 1회당 400캐시로 환산하여 지급해드립니다.
+
+ 감사합니다."></textarea>
 
             </div>
         </div>
