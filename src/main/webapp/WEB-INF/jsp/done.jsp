@@ -28,7 +28,8 @@
             <div class="input_wrap">
                 <label>핀코드</label>
                 <textarea name="content" placeholder="핀코드를 입력해주세요.
-예) 1111-1111-1111111 = 10,000"></textarea>
+예) 1111-1111-1111111 = 10,000
+    비율은 1:1 입니다. 꼭 금액도 같이 기재해주셔야 합니다. 위 양식을 꼭 지켜주세요."></textarea>
 
             </div>
             <div class="check_wrap">

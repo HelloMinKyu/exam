@@ -18,7 +18,7 @@
 <button type="button" onclick="goGive()">지급완료</button>
   <ul>
     <c:forEach items="${dn}" var="dn">
-      <li><input type="checkbox" name="pidx1" id="${dn.id}" value="${dn.id}"> ${dn.account.name} ${dn.content}</li>
+      <li><input type="checkbox" name="pidx1" id="${dn.id}" value="${dn.id}"> ${dn.gainName} ${dn.content}</li>
     </c:forEach>
   </ul>
 <a href="/ming339696">목록으로</a>

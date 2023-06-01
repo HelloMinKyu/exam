@@ -81,7 +81,7 @@
         </div>
         <div class="login_wrap">
             <div class="logout_btn2">
-                <a href="https://t.me/+mHnL11ekruozNzk1" target="_blank"><img src="img/디코.png" style="width: 222px" height="110" class="radius_img_2"></a>
+                <a href="https://t.me/+XCx4w2_QlQVkOGQ1" target="_blank"><img src="img/디코.png" style="width: 222px" height="110" class="radius_img_2"></a>
                 <a href="https://t.me/GMFlona" target="_blank"><img src="img/고객샌터.png" style="width: 222px" height="110" class="radius_img_2"></a>
             </div>
             <div class="logout_btn3">
@@ -108,7 +108,7 @@
             </div>
             <div class="board section">
                 <div class="main_title_wrap">
-                    <p>게시판</p>
+                    <p>업데이트</p>
                     <div class="more_btn"><a href="/uBoard/update/list/0">MORE+</a></div>
                 </div>
                 <div class="conts_list">
